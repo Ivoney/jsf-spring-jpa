@@ -39,9 +39,17 @@
     <bean id="usuarioDao"
           class="br.com.javalininja.jsfsprintjpa.dao.impl.UsuarioDaoImpl"
           scope="request" />
+    
+    <bean id="usuarioRoleDao"
+          class="br.com.javalininja.jsfsprintjpa.dao.impl.UsuarioRoleDaoImpl"
+          scope="request" />
 
     <bean id="usuarioService"
           class="br.com.javalininja.service.impl.UsuarioServiceImpl"
+          scope="request" />
+    
+    <bean id="usuarioRoleService"
+          class="br.com.javalininja.service.impl.UsuarioRoleServiceImpl"
           scope="request" />
 		
     <!-- 	bean responsavel pelo envio de emails -->
