@@ -11,7 +11,7 @@
 
     <!-- Classe responsavel pela gestao das entidades -->
     <bean id="entityManagerFactory"
-              class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="bdjavali" />
         <property name="jpaProperties">
             <props>
@@ -37,12 +37,12 @@
     </bean>
 
     <bean id="usuarioDao"
-              class="br.com.javalininja.jsfsprintjpa.dao.impl.UsuarioDaoImpl"
-              scope="request" />
+          class="br.com.javalininja.jsfsprintjpa.dao.impl.UsuarioDaoImpl"
+          scope="request" />
 
     <bean id="usuarioService"
-              class="br.com.javalininja.service.impl.UsuarioServiceImpl"
-              scope="request" />
+          class="br.com.javalininja.service.impl.UsuarioServiceImpl"
+          scope="request" />
 		
     <!-- 	bean responsavel pelo envio de emails -->
     <bean id="emailUtil" class="br.com.javalininja.util.EmailUtil" c:mailSender-ref="mailSender"/>

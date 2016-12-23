@@ -8,14 +8,13 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 
 public class EmailUtil {
 
-	private JavaMailSender mailSender;
-	
-	public EmailUtil(JavaMailSender mailSender) {
+    private JavaMailSender mailSender;
+
+    public EmailUtil(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
-	
-	
-	public boolean sendEmail(final String text, final String subject, final String to) {
+
+    public boolean sendEmail(final String text, final String subject, final String to) {
 
         MimeMessagePreparator preparator = new MimeMessagePreparator() {
             public void prepare(MimeMessage mimeMessage) throws Exception {
@@ -27,7 +26,7 @@ public class EmailUtil {
         };
 
         //Tenta enviar o email 3 vezes, para evitar timeout
-        for(int ind = 0; ind < 3; ind++) {
+        for (int ind = 0; ind < 3; ind++) {
             try {
                 mailSender.send(preparator);
                 return true;
@@ -39,5 +38,5 @@ public class EmailUtil {
         }
         return false;
     }
-	
+
 }
